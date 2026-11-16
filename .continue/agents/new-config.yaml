@@ -1,0 +1,26 @@
+
+name: Mi asistente local
+version: 0.0.1
+schema: v1
+
+models:
+  - name: GPT-OSS 20B Local
+    provider: ollama
+    model: gpt-oss:20b
+    apiBase: http://localhost:11434
+    roles:
+      - chat
+      - edit
+      - apply
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      contextLength: 8192
+      temperature: 0.2
+
+  - name: Qwen Coder Local
+    provider: ollama
+    model: qwen3.5:9b
+    apiBase: http://localhost:11434
+    roles:
+      - autocomplete
